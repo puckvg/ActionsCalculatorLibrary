@@ -1,5 +1,5 @@
 python=python3
-LINE_LENGTH=79
+LINE_LENGTH=88
 BLACKARGS=--line-length ${LINE_LENGTH}
 
 src=calculator/*.py tests/*.py
