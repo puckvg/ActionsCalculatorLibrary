@@ -1,20 +1,19 @@
 """
-Unit tests for the calculator library
+Unit tests for the operations library
 """
 
-import calculator
+import operations
 
 
-class TestCalculator:
-
+class Testoperations:
     def test_addition(self):
-        assert 4 == calculator.add(2, 2)
+        assert 4 == operations.add(2, 2)
 
     def test_subtraction(self):
-        assert 2 == calculator.subtract(4, 2)
+        assert 2 == operations.subtract(4, 2)
 
     def test_multiplication(self):
-        assert 100 == calculator.multiply(10, 10)
+        assert 100 == operations.multiply(10, 10)
 
     def test_division(self):
-        assert 1 == calculator.divide(10, 10)
+        assert 1 == operations.divide(10, 10)
