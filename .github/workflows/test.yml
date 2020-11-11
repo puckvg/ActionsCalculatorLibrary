@@ -26,12 +26,12 @@ jobs:
         python3 -m pip install -r requirements.txt
 
     # step 4 : check pep8 compliant
-    - name: lint with flake8
+    - name: lint with isort, flake8, black
       run: | 
-        flake8 --statistics
+          make lint
 
     # step 5 : run tests
     - name: Test with pytest
       run: |
-        pytest test_calculator.py 
+          make test
 
