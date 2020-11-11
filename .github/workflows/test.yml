@@ -16,7 +16,7 @@ jobs:
     - name: set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
-        python-version: {{ matrix.python-version }} 
+        python-version: ${{ matrix.python-version }} 
 
     # step 3 : install dependencies
     # virtual env? 
