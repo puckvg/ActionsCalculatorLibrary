@@ -8,30 +8,30 @@ jobs:
                 python-version: [3.6, 3.7, 3.8]
 
         steps:
-            # step 1 : obtain repo from github ("checkout")
-            - name: obtain repo
-              uses: actions/checkout@v2
+        # step 1 : obtain repo from github ("checkout")
+        - name: obtain repo
+            uses: actions/checkout@v2
 
-            # step 2 : set up python 
-            - name: set up Python ${{ matrix.python-version }}
-              uses: actions/setup-python@v2
-              with:
-                  {{ matrix.python-version }} 
+        # step 2 : set up python 
+        - name: set up Python ${{ matrix.python-version }}
+            uses: actions/setup-python@v2
+            with:
+                {{ matrix.python-version }} 
 
-            # step 3 : install dependencies
-            # virtual env? 
-            - name: install dependencies
-              run: |
-                  python3 -m pip install --upgrade pip
-                  python3 -m pip install -r requirements.txt
+        # step 3 : install dependencies
+        # virtual env? 
+        - name: install dependencies
+            run: |
+                python3 -m pip install --upgrade pip
+                python3 -m pip install -r requirements.txt
 
-            # step 4 : check pep8 compliant
-            - name: lint with flake8
-              run: | 
-                  flake8 --statistics
+        # step 4 : check pep8 compliant
+        - name: lint with flake8
+            run: | 
+                flake8 --statistics
 
-            # step 5 : run tests
-            - name: Test with pytest
-              run: |
-                  pytest -v tests
+        # step 5 : run tests
+        - name: Test with pytest
+            run: |
+                pytest -v tests
 
